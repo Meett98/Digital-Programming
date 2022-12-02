@@ -1,0 +1,449 @@
+module encoderanddecoder;
+    reg[96*1:0]str1;
+    reg[12*5:0] ans;
+    reg[59:0] aa;
+    integer i,j;
+    
+    // Encoding alphabetical string to binary string
+    
+    initial begin
+        str1 = "HIDDENMANUAL";
+        $display("Input Message is %s",str1);
+        j = 0;
+        for(i=0;i<96;i=i+8)
+        begin
+            begin 
+              if(str1[i+:8] == "C")
+              begin
+                ans[j] = 1;
+                ans[j+1]=1;
+                ans[j+2]=0;
+                ans[j+3]=0;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "D")
+              begin
+                ans[j] = 0;
+                ans[j+1]=0;
+                ans[j+2]=1;
+                ans[j+3]=0;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "A")
+              begin
+                ans[j] = 1;
+                ans[j+1]=0;
+                ans[j+2]=0;
+                ans[j+3]=0;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "B")
+              begin
+                ans[j] = 0;
+                ans[j+1]=1;
+                ans[j+2]=0;
+                ans[j+3]=0;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "E")
+              begin
+                ans[j] = 1;
+                ans[j+1]=0;
+                ans[j+2]=1;
+                ans[j+3]=0;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "F")
+              begin
+                ans[j] = 0;
+                ans[j+1]=1;
+                ans[j+2]=1;
+                ans[j+3]=0;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "G")
+              begin
+                ans[j] = 1;
+                ans[j+1]=1;
+                ans[j+2]=1;
+                ans[j+3]=0;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "H")
+              begin
+                ans[j] = 0;
+                ans[j+1]=0;
+                ans[j+2]=0;
+                ans[j+3]=1;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "I")
+              begin
+                ans[j] = 1;
+                ans[j+1]=0;
+                ans[j+2]=0;
+                ans[j+3]=1;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "J")
+              begin
+                ans[j] = 0;
+                ans[j+1]=1;
+                ans[j+2]=0;
+                ans[j+3]=1;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "K")
+              begin
+                ans[j] = 1;
+                ans[j+1]=1;
+                ans[j+2]=0;
+                ans[j+3]=1;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "L")
+              begin
+                ans[j] = 0;
+                ans[j+1]=0;
+                ans[j+2]=1;
+                ans[j+3]=1;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "M")
+              begin
+                ans[j] = 1;
+                ans[j+1]=0;
+                ans[j+2]=1;
+                ans[j+3]=1;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "N")
+              begin
+                ans[j] = 0;
+                ans[j+1]=1;
+                ans[j+2]=1;
+                ans[j+3]=1;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "O")
+              begin
+                ans[j] = 1;
+                ans[j+1]=1;
+                ans[j+2]=1;
+                ans[j+3]=1;
+                ans[j+4]=0;
+              end
+              else if(str1[i+:8] == "P")
+              begin
+                ans[j] = 0;
+                ans[j+1]=0;
+                ans[j+2]=0;
+                ans[j+3]=0;
+                ans[j+4]=1;
+              end
+              else if(str1[i+:8] == "Q")
+              begin
+                ans[j] = 1;
+                ans[j+1]=0;
+                ans[j+2]=0;
+                ans[j+3]=0;
+                ans[j+4]=1;
+              end
+              else if(str1[i+:8] == "R")
+              begin
+                ans[j] = 0;
+                ans[j+1]=1;
+                ans[j+2]=0;
+                ans[j+3]=0;
+                ans[j+4]=1;
+              end
+              else if(str1[i+:8] == "S")
+              begin
+                ans[j] = 1;
+                ans[j+1]=1;
+                ans[j+2]=0;
+                ans[j+3]=0;
+                ans[j+4]=1;
+              end
+              else if(str1[i+:8] == "T")
+              begin
+                ans[j] = 0;
+                ans[j+1]=0;
+                ans[j+2]=1;
+                ans[j+3]=0;
+                ans[j+4]=1;
+              end
+              else if(str1[i+:8] == "U")
+              begin
+                ans[j] = 1;
+                ans[j+1]=0;
+                ans[j+2]=1;
+                ans[j+3]=0;
+                ans[j+4]=1;
+              end
+              else if(str1[i+:8] == "V")
+              begin
+                ans[j] = 0;
+                ans[j+1]=1;
+                ans[j+2]=1;
+                ans[j+3]=0;
+                ans[j+4]=1;
+              end
+              else if(str1[i+:8] == "W")
+              begin
+                ans[j] = 1;
+                ans[j+1]=1;
+                ans[j+2]=1;
+                ans[j+3]=0;
+                ans[j+4]=1;
+              end
+              else if(str1[i+:8] == "X")
+              begin
+                ans[j] = 0;
+                ans[j+1]=0;
+                ans[j+2]=0;
+                ans[j+3]=1;
+                ans[j+4]=1;
+              end
+              else if(str1[i+:8] == "Y")
+              begin
+                ans[j] = 1;
+                ans[j+1]=0;
+                ans[j+2]=0;
+                ans[j+3]=1;
+                ans[j+4]=1;
+              end
+              else if(str1[i+:8] == "Z")
+              begin
+                ans[j] = 0;
+                ans[j+1]=1;
+                ans[j+2]=0;
+                ans[j+3]=1;
+                ans[j+4]=1;
+              end 
+            j=j+5;
+            end
+        end
+        aa = ans[60:0];
+    $display("The encoded Bits are : %b",aa);
+    end
+    
+
+// Encoding binary string to peptide sequence
+
+integer k;
+    reg [2:0] tmp;
+    reg[160*1:0] a;
+    integer jj;
+    initial begin
+        jj=0;
+        for(k=0;k<60;k=k+3)
+        begin
+            begin 
+                tmp = aa[k+:3];
+            case(tmp)
+                3'b000 : a[jj+:8] = "S";
+                3'b001 : a[jj+:8] = "T";
+                3'b010 : a[jj+:8] = "E";
+                3'b011 : a[jj+:8] = "Y";
+                3'b100 : a[jj+:8] = "A";
+                3'b101 : a[jj+:8] = "V";
+                3'b110 : a[jj+:8] = "L";
+                3'b111 : a[jj+:8] = "F";
+            endcase
+            jj=jj+8;
+            end
+         end
+         $display("Peptide Encoded Message is : %s",a);
+    end
+    
+    reg [60*1:0] ans1;
+    reg [59:0] decode;
+    integer j1,k1;
+    
+    // Decoding peptide sequence to binary string
+    
+    initial begin
+        j1=0;
+        k1=0;
+        for(k1=0;k1<160;k1=k1+8)
+        begin
+            begin 
+            if(a[k1+:8] == "S")
+              begin
+                ans1[j1] = 0;
+                ans1[j1+1]=0;
+                ans1[j1+2]=0;
+              end
+              else if(a[k1+:8] == "T")
+              begin
+                ans1[j1] = 1;
+                ans1[j1+1]=0;
+                ans1[j1+2]=0;
+              end
+              else if(a[k1+:8] == "E")
+              begin
+                ans1[j1] = 0;
+                ans1[j1+1]=1;
+                ans1[j1+2]=0;
+              end
+              else if(a[k1+:8] == "Y")
+              begin
+                ans1[j1] = 1;
+                ans1[j1+1]=1;
+                ans1[j1+2]=0;
+              end
+              else if(a[k1+:8] == "A")
+              begin
+                ans1[j1] = 0;
+                ans1[j1+1]=0;
+                ans1[j1+2]=1;
+              end
+              else if(a[k1+:8] == "V")
+              begin
+                ans1[j1] = 1;
+                ans1[j1+1]=0;
+                ans1[j1+2]=1;
+              end
+              else if(a[k1+:8] == "L")
+              begin
+                ans1[j1] = 0;
+                ans1[j1+1]=1;
+                ans1[j1+2]=1;
+              end
+              else if(a[k1+:8] == "F")
+              begin
+                ans1[j1] = 1;
+                ans1[j1+1]=1;
+                ans1[j1+2]=0;
+              end
+              j1=j1+3;
+            end
+        end
+        decode = ans1[59:0];
+        $display("The Decoded Bits are : %b",decode);
+    end
+    
+    reg [96*1:0] ans2;
+    integer j2;
+    integer k2;
+    reg [4:0] tmp1;
+    
+    // Retrieving Original message from decoded binary string
+    
+    initial begin
+        j2=0;
+        k2=0;
+        for(j2=0;j2<60;j2=j2+5)
+        begin
+            begin 
+            if(decode[j2] == 1 && decode[j2+1]==0 && decode[j2+2]==0 && decode[j2+3]==0 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="A";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==1 && decode[j2+2]==0 && decode[j2+3]==0 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="B";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==1 && decode[j2+2]==0 && decode[j2+3]==0 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="C";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==0 && decode[j2+2]==1 && decode[j2+3]==0 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="D";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==0 && decode[j2+2]==1 && decode[j2+3]==0 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="E";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==1 && decode[j2+2]==1 && decode[j2+3]==0 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="F";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==1 && decode[j2+2]==1 && decode[j2+3]==0 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="G";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==0 && decode[j2+2]==0 && decode[j2+3]==1 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="H";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==0 && decode[j2+2]==0 && decode[j2+3]==1 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="I";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==1 && decode[j2+2]==0 && decode[j2+3]==1 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="J";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==1 && decode[j2+2]==0 && decode[j2+3]==1 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="K";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==0 && decode[j2+2]==1 && decode[j2+3]==1 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="L";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==0 && decode[j2+2]==1 && decode[j2+3]==1 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="M";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==1 && decode[j2+2]==1 && decode[j2+3]==1 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="N";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==1 && decode[j2+2]==1 && decode[j2+3]==1 && decode[j2+4]==0)
+              begin
+                ans2[k2+:8]="O";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==0 && decode[j2+2]==0 && decode[j2+3]==0 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="P";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==0 && decode[j2+2]==0 && decode[j2+3]==0 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="Q";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==1 && decode[j2+2]==0 && decode[j2+3]==0 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="R";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==1 && decode[j2+2]==0 && decode[j2+3]==0 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="S";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==0 && decode[j2+2]==1 && decode[j2+3]==0 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="T";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==0 && decode[j2+2]==1 && decode[j2+3]==0 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="U";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==1 && decode[j2+2]==1 && decode[j2+3]==0 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="V";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==1 && decode[j2+2]==1 && decode[j2+3]==0 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="W";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==0 && decode[j2+2]==0 && decode[j2+3]==1 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="X";
+              end
+              else if(decode[j2] == 1 && decode[j2+1]==0 && decode[j2+2]==0 && decode[j2+3]==1 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="Y";
+              end
+              else if(decode[j2] == 0 && decode[j2+1]==1 && decode[j2+2]==0 && decode[j2+3]==1 && decode[j2+4]==1)
+              begin
+                ans2[k2+:8]="Z";
+              end
+              k2=k2+8;
+            end
+        end
+        $display("Decoded Message is  %s",ans2);
+    end
+endmodule
